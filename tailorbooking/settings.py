@@ -14,7 +14,7 @@ SECRET_KEY = "django-insecure-=%cco_8!vb&v3xla*=v*%poa62i2yrsb@*$t-n%fq*d7fjq+ap
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ["*"]
 BASE_URL = "/abc/"
 
 # Application definition
@@ -79,10 +79,10 @@ WSGI_APPLICATION = "tailorbooking.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "tailor_booking",
-        "USER": "postgres",
-        "PASSWORD": "postgres",
-        "HOST": "localhost",
+        "NAME": "d16skqr9gd4jmf",
+        "USER": "qdwweigryhxisb",
+        "PASSWORD": "35b7e656dfe8f44a38d5629bc1d6b0d4eb8ffd6353fbf6ee562569bf41051d65",
+        "HOST": "ec2-52-207-15-147.compute-1.amazonaws.com",
         "PORT": "5432",
     }
 }

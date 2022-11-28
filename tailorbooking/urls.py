@@ -16,7 +16,9 @@ urlpatterns = [
         name="tailor-details",
     ),
     path(f"{starting_url}check-availability/", views.CheckAvailability),
-    path(f"{starting_url}user-profile", views.Userprofile, name="user-profile"),
-    path(f"{starting_url}tailor-profile", views.TailorProfile, name="tailor-profile"),
+    path(f"{starting_url}user-profile",
+         views.Userprofile, name="user-profile"),
+    path(f"{starting_url}tailor-profile",
+         views.TailorProfile, name="tailor-profile"),
     path(f"{starting_url}user-register/", views.registerUser),
 ]
