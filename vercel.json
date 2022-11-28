@@ -4,7 +4,7 @@
         {
         "src": "tailorbooking/wsgi.py",
         "use": "@vercel/python",
-        "contig": { "maxLanhdaSize": "15mb", "runtine": "python3.9"}
+        "config": { "maxLanhdaSize": "15mb", "runtine": "python3.9"}
         },
         {
         "src": "build_files.sh",
