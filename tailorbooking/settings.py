@@ -1,4 +1,6 @@
 import os
+import django_heroku
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -14,7 +16,7 @@ SECRET_KEY = "django-insecure-=%cco_8!vb&v3xla*=v*%poa62i2yrsb@*$t-n%fq*d7fjq+ap
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["uba-test-app.herokuapp.com"]
 BASE_URL = "/abc/"
 
 # Application definition
@@ -124,7 +126,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = "/static/"
 
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
@@ -151,5 +152,6 @@ AWS_S3_SIGNATURE_VERSION = "s3v4"
 AWS_S3_FILE_OVERWRITE = False
 AWS_REGION = "ap-south-1"
 
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = "/static/"
+django_heroku.settings(locals())
