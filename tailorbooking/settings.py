@@ -152,4 +152,4 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_REGION = "ap-south-1"
 
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_buid', 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
