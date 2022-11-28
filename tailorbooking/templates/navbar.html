@@ -1,0 +1,54 @@
+<!--Main Navigation-->
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
+
+<header>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container">
+      <a class="navlink font-size-c x" href="{% url 'home' %}">Tailors</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon d-flex justify-content-center align-items-center">
+          <i class="fas fa-bars"></i>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-md-auto gap-2 ps-3">
+          <li class="nav-item rounded">
+            <a class="nav-link" href="{% url 'home' %}" rel="nofollow">Home</a>
+          </li>
+          <li class="nav-item rounded">
+            <a class="nav-link" href="{% url 'home' %}#contact-us">Contact Us</a>
+          </li>
+          <li class="nav-item rounded">
+            <a class="nav-link" href="{% url 'home' %}#about-us">About Us</a>
+          </li>
+          {% if not user.is_authenticated %}
+          <li class="nav-item rounded">
+            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+          </li>
+          {% endif %}
+          {% if user.is_authenticated and user.isTailor %}
+          <li class="nav-item rounded">
+            <a class="nav-link" href="{% url 'tailor-profile' %}">Tailor Profile</a>
+          </li>
+          {% endif %}
+          {% if user.is_authenticated and not user.isTailor %}
+          <li class="nav-item rounded">
+            <a class="nav-link" href="{% url 'user-profile' %}">User Profile</a>
+          </li>
+          {% endif %}
+
+          {% if user.is_authenticated %}
+          <li class="nav-item rounded">
+            <form method="post" action="{% url 'account_logout' %}">
+              {% csrf_token %}
+              <button class="nav-link signout" type="submit">Sign Out</button>
+            </form>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

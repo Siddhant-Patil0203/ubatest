@@ -1,0 +1,43 @@
+.font-size-c {
+  font-family: cursive;
+  font-size: 30px;
+}
+
+.navbar {
+  background-color: #014269;
+}
+
+.navlink {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff !important;
+}
+
+.nav-link {
+  color: #ffffff !important;
+}
+
+.signout {
+  background: none;
+  border: none;
+}
+
+ul li a:hover,
+.signout:hover {
+  background-color: #ffffff;
+  border-radius: 8px;
+  color: #014269 !important;
+  text-decoration: solid;
+  transition: 0.2s;
+}
+
+.x {
+  padding: 10px;
+}
+
+.y {
+  padding: 20px;
+}
