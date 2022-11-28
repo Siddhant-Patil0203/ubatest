@@ -1,5 +1,5 @@
 import os
-import django_heroku
+# import django_heroku
 
 from pathlib import Path
 
@@ -154,4 +154,4 @@ AWS_REGION = "ap-south-1"
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
