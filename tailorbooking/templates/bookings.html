@@ -20,7 +20,39 @@
 <body>
 
     {% include "navbar.html" %}
-    <h1>We are still working on this page</h2>
+        <div class="container-fluid w-100 px-5" style="margin-top: 100px;">
+        <div class="row px-3">
+            {% for tailor in tailors %}
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <!-- Tailor Card -->
+                <div class="mx-auto m-2 p-0">
+                    <a href="{% url 'tailor-details' tailor.user.username %}" class=" text-decoration-none m-0 p-0">
+                        <div class="card rounded-lg shadow h-100 p-0" id="productCard">
+                            {% with pic=tailor.pictures|first %}
+                            <img src="{{pic.url}}" width="280px">
+                            {% endwith %}
+                            <div class="card-body mx-0 my-2 p-2" style="max-height:145px">
+                                <div class="card-title p-0 font-weight-bolder text-center text-dark"
+                                    style="max-height:42px">{{tailor.user.first_name}}</div>
+                                <p class="card-text text-center text-muted" style="max-height:22px">{{tailor.about}}</p>
+                                <div class="card-footer text-center text-dark bg-white">
+                                    <span class="font-weight-bold mx-auto">
+                                        <s class="font-sourceSans"></s>
+                                        <span class="font-sourceSans font-semibold font-20">BookingCharges:
+                                            <strong>&#X20B9;</strong>{{tailor.booking_charges|floatformat:"0"}}</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
 
 </body>
 
